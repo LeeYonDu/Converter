@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src ="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src ="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+       function Title() {
+        return (
+            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+                        Hello I'm a title
+            </h3>
+        
+               );
+    
+       };
+
+       
+      
+        const Button = () => (
+            <button
+            style={{backgroundColor: "tomato",
+
+            }}
+            onClick={() => console.log("im clicked")}>
+            Click me
+            </button>
+            
+        );
+
+        const Container = ( 
+            <div>
+            <Title />
+            <Button /> 
+            </div> //소문자로 쓰면 html 태그로 인식
+
+        ); 
+
+        ReactDOM.render(Container, root);
+        /*ReactDOM.render(무엇을, 어디에) 
+        => render은 React element를 가지고 HTML로 만들어서 배치한다는 뜻*/
+        </script>
+
+</html>
